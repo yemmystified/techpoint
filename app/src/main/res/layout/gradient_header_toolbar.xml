@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gradientHeader"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@drawable/gradient_header_toolbar_background"
+    android:minHeight="?attr/actionBarSize"
+    android:visibility="gone"/>
+    <!--android:background="@drawable/gradient_header_toolbar_background"-->
+    <!--for transparent background use below code-->
+    <!--android:background="@color/sb__transparent"-->
+    <!--android:alpha="0.1"-->

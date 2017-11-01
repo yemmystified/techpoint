@@ -1,0 +1,57 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="standard_margin">16dp</dimen>
+
+    <!-- Image sizes -->
+    <dimen name="thumb_width">72dp</dimen>
+    <dimen name="thumb_height">72dp</dimen>
+
+    <!-- List item sizes -->
+    <!--this is the initial padding below-->
+    <!--<dimen name="caption_padding">5dp</dimen>-->
+    <dimen name="caption_padding">3dp</dimen>
+    <!--all i had to change to make the text seperate from the thumbnail image was to increase the padding below from 111 to 120-->
+    <dimen name="item_padding_with_icon">120dp</dimen>
+    <dimen name="item_twoline_height">96dp</dimen>
+    <dimen name="item_singleline_height">48dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <!--<dimen name="parallax_image_height">214dp</dimen>--> //this is to show slideshows
+    <dimen name="parallax_image_height">180dp</dimen>
+
+    <!-- Circular progress bar sizes -->
+    <dimen name="circleprogressbar_width">60dp</dimen>
+    <dimen name="circleprogressbar_height">60dp</dimen>
+    <dimen name="progress_bar_height">3dp</dimen>
+
+    <!-- text sizes -->
+    <dimen name="display_1">34sp</dimen>
+    <dimen name="headline">24sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="subhead">16sp</dimen>
+    <dimen name="body">14sp</dimen>
+
+    <!-- Floating action button sizes -->
+    <dimen name="flexible_space_show_fab_offset">120dp</dimen>
+
+
+    <!--Youtube-->
+    <!-- Adapter item sizes -->
+    <dimen name="thumbnail_width">120dp</dimen>
+    <dimen name="thumbnail_height">96dp</dimen>
+    <dimen name="caption_padding_video">3dp</dimen>
+    <dimen name="item_twoline_height_video">120dp</dimen>
+    <dimen name="item_padding_with_icon_video">152dp</dimen>
+    <!-- Drawer sizes -->
+    <dimen name="header_drawer_height">72dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--Title size-->
+    <dimen name="video_title">15sp</dimen>
+
+
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+
+</resources>

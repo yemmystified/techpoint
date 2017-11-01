@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="primary_color">#263238</color>-->
+    <color name="primary_color">#3099d0</color>
+    <!--<color name="dark_primary_color">#1d2629</color>-->
+    <color name="dark_primary_color">#FF1F6386</color>
+    <!--<color name="accent_color">#f14447</color>-->
+    <!--<color name="accent_color">#FDD835</color>-->
+    <color name="accent_color">#ca501a</color>
+    <!--FB6E60-->
+    <!--<color name="accent_color">#e4232a</color>-->
+    <color name="text_color_new">#000000</color>
+    <color name="light_primary_color">#C5CAE9</color>
+    <color name="text_and_icon_color">#FFFFFF</color>
+    <color name="primary_text">#212121</color>//text
+    <color name="navigation_text_color">#ffffff</color>//text
+    <color name="secondary_text">#ffffff</color>//icons
+    <color name="divider_color">#B6B6B6</color>
+    <color name="window_background_color">#E6E8E9</color>
+    <color name="material_background_color">#ffffff</color>
+    <!--<color name="drawer_background_color">#36454d</color>-->
+    <color name="drawer_background_color">#1c6991</color>
+    <color name="drawer_item_selected_color">#E9E9E9</color>
+    <color name="drawer_divider_color">#E4E4E4</color>
+    // this is the slide color for the slide shows and also the article image section
+    <!--<color name="slide_color">#f55a60</color>-->
+    <color name="slide_color">#ca501a</color>
+    <!--<color name="my_new_top_color">#62656e</color>-->
+    <!--<color name="my_new_top_color">#7d8089</color>-->
+</resources>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.formatrix.techpoint"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions that required for Google Maps Android API and Admob SDK -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!--<uses-permission android:name="android.permission.LOCATION_HARDWARE"/>-->
+    <!-- for shortcut -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--<meta-data android:name="com.google.android.gms.version"-->
+        <!--android:value="@integer/google_play_services_version"/>-->
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivitySplash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityAbout"
+            android:label="@string/about"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityHome"/>
+
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityBrowser"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityHome"/>
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityArticlesByCategory"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityHome"/>
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityDetail"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityHome"/>
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityComments"
+            android:label="@string/comment"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityDetail"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityDetail"/>
+        </activity>
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivityHome"
+            android:label=""
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".activities.ActivitySearch"/>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!---->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <!-- this is the youtube class -->
+        <activity
+            android:name="com.formatrix.techpoint.youtube.activities.ActivityVideo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/new_videos"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.youtube.activities.ActivityVideo"/>
+            <intent-filter>
+                <action android:name="Video" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- end of activity -->
+
+        <activity
+            android:name="com.formatrix.techpoint.activities.ActivitySearch"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityHome"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityHome"/>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+
+        </activity>
+
+        <provider
+            android:name="com.formatrix.techpoint.providers.ProviderSuggestion"
+            android:authorities="com.formatrix.techpoint.providers.ProviderSuggestion"/>
+
+        <!--<activity-->
+        <!--android:name=".activities.FormActivity"-->
+        <!--android:label="@string/title_activity_form"-->
+        <!--android:parentActivityName=".activities.ActivityHome"-->
+        <!--android:theme="@style/AppTheme">-->
+        <!--<meta-data-->
+        <!--android:name="android.support.PARENT_ACTIVITY"-->
+        <!--android:value="com.formatrix.techpoint.activities.ActivityHome"/>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN"/>-->
+        <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity
+            android:name="com.formatrix.techpoint.activities.MsgActivity"
+            android:label="@string/title_activity_feed"
+            android:parentActivityName="com.formatrix.techpoint.activities.ActivityAbout"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.formatrix.techpoint.activities.ActivityAbout"/>
+        </activity>
+
+        <!--<activity android:name=".mag.ViewPagerActivity"-->
+        <!--android:theme="@style/Theme.AppCompat.NoActionBar">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN"/>-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name=".activities.PdfActivity"-->
+        <!--android:theme="@android:style/Theme.NoTitleBar.Fullscreen">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="Magazine" />-->
+        <!--<action android:name="android.intent.action.MAIN"/>-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+
+
+        <!--this is for firebase notification system-->
+        <service
+            android:name="com.formatrix.techpoint.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.formatrix.techpoint.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_action_name" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <!--firebase notification system ends here-->
+
+
+        <!--codes gotten from stackoverflow for samsung multiwindow devices-->
+        <uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip" />
+        <meta-data android:name="com.samsung.android.sdk.multiwindow.penwindow.enable" android:value="true" />
+
+
+
+        <meta-data
+            android:name="com.samsung.android.sdk.multiwindow.multiinstance.enable"
+            android:value="true" />
+
+
+        <meta-data
+            android:name="com.samsung.android.sdk.multiwindow.enable"
+            android:value="true"/>
+        <!--ended here-->
+        <!--adcolony activity starts here-->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity android:name="com.adcolony.sdk.AdColonyInterstitialActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.adcolony.sdk.AdColonyAdViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <!--adcolony activity ends here-->
+    </application>
+
+</manifest>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minHeight="@dimen/item_twoline_height"
+    android:background="@drawable/list_item_normal"
+    android:clickable="true">
+
+    <!--<com.makeramen.roundedimageview.RoundedImageView-->
+    <!--android:id="@+id/imgThumbnail"-->
+    <!--android:layout_width="@dimen/thumb_width"-->
+    <!--android:layout_height="@dimen/thumb_height"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:contentDescription="@string/app_name"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:layout_marginLeft="@dimen/standard_margin"-->
+    <!--app:riv_oval="true"/>-->
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            app:paddingEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Muyiwa Afolabi"
+            android:scaleType="centerCrop"
+            android:paddingRight="0dp"
+            android:cropToPadding="true"
+            android:layout_marginLeft="17dp"/>
+
+
+        <TextView
+        android:id="@+id/txtDuration"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_and_icon_color"
+        android:textSize="@dimen/subhead"
+        android:ellipsize="end"
+        android:padding="@dimen/caption_padding_video"
+        android:background="@color/accent_color"
+        android:layout_gravity="bottom|right"
+        android:maxLines="1" />
+
+
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/lytContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/item_padding_with_icon"
+        android:paddingRight="@dimen/standard_margin"
+        android:paddingTop="@dimen/standard_margin"
+        android:paddingBottom="@dimen/standard_margin"
+        android:layout_centerVertical="true">
+
+        <!--<TextView-->
+            <!--android:id="@+id/txtCategoryName"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textAllCaps="true"-->
+            <!--android:textColor="@color/text_and_icon_color"-->
+            <!--android:textSize="@dimen/body"-->
+            <!--android:background="@color/accent_color"-->
+            <!--android:paddingLeft="@dimen/caption_padding"-->
+            <!--android:paddingRight="@dimen/caption_padding"/>-->
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/title"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <TextView
+            android:id="@+id/views"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/title"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/txtAuthorAndDate"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:textSize="@dimen/subhead"-->
+            <!--android:textColor="@color/md_green_800"/>-->
+        <!--i changed a text here-->
+        <!--android:textColor="@color/secondary_text"/>-->
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="@dimen/item_padding_with_icon"/>
+    <!--android:background="@color/divider_color"-->
+</RelativeLayout>
+
+
+
+
+
+
+
+<!--INITIAL LAYOUT BELOW-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:minHeight="@dimen/item_twoline_height_video"-->
+    <!--android:background="@color/material_background_color">-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/lytThumbnail"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_marginLeft="@dimen/standard_margin"-->
+        <!--android:layout_gravity="center_vertical">-->
+        <!--&lt;!&ndash;android:layout_width="@dimen/thumbnail_width"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="@dimen/thumbnail_height"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/imgThumbnail"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="@dimen/thumbnail_width"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="@dimen/thumbnail_height"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:cropToPadding="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:scaleType="centerCrop"/>&ndash;&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/imgThumbnail"-->
+            <!--android:layout_width="120dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--app:paddingEnd="5dp"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:contentDescription="Muyiwa Afolabi"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:paddingRight="0dp"-->
+            <!--android:cropToPadding="true"-->
+            <!--android:layout_marginLeft="17dp"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/txtDuration"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="@color/text_and_icon_color"-->
+            <!--android:textSize="@dimen/subhead"-->
+            <!--android:ellipsize="end"-->
+            <!--android:padding="@dimen/caption_padding_video"-->
+            <!--android:background="@color/accent_color"-->
+            <!--android:layout_gravity="bottom|right"-->
+            <!--android:maxLines="1" />-->
+    <!--</FrameLayout>-->
+
+    <!--&lt;!&ndash; Location name and address &ndash;&gt;-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:paddingLeft="@dimen/item_padding_with_icon_video"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:paddingRight="@dimen/standard_margin">-->
+        <!--<TextView-->
+            <!--android:id="@+id/txtTitle"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="@color/primary_text"-->
+            <!--android:textSize="@dimen/title"-->
+            <!--android:ellipsize="end"-->
+            <!--android:maxLines="2"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/txtPublishedAt"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="@color/secondary_text"-->
+            <!--android:textSize="@dimen/subhead"-->
+            <!--android:ellipsize="end"-->
+            <!--android:maxLines="1" />-->
+        <!--&lt;!&ndash;android:maxLines="1" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/divider_height"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:layout_gravity="bottom" />-->
+    <!--&lt;!&ndash;android:background="@color/divider_color"&ndash;&gt;-->
+<!--</FrameLayout>-->

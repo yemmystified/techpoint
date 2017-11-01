@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="numbers">
+    <item>      +234&#8211;818&#8211;601&#8211;6629</item>
+    <!--<item>       +234&#8211;810&#8211;781&#8211;5864</item>-->
+    </string-array>
+
+    <string-array name="spinarray">
+        <!--<item>Select One...</item>-->
+        <item>Career</item>
+        <item>Business</item>
+        <item>Religion</item>
+        <item>Government</item>
+        <item>School/University</item>
+    </string-array>
+
+
+
+
+
+    <array name="array_dot_active">
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+        <item>@color/accent_color</item>
+    </array>
+</resources>

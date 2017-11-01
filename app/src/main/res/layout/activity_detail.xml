@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:ads="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/window_background_color">
+
+	<com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+		android:id="@+id/scroll"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<!--<ImageView-->
+				<!--android:id="@+id/imgImage"-->
+				<!--android:layout_width="match_parent"-->
+				<!--android:layout_height="@dimen/parallax_image_height"-->
+				<!--android:scaleType="centerCrop" />-->
+
+			<com.formatrix.techpoint.utils.kbv.KenBurnsView
+				android:id="@+id/imgImage"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/parallax_image_height"
+				android:scaleType="centerCrop" />
+
+
+			<!--android:scaleType="matrix"-->
+			<!--/>-->
+
+			<FrameLayout
+				android:id="@+id/anchor"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/parallax_image_height"
+				android:minHeight="@dimen/parallax_image_height" >
+
+				<!-- Admob banner  -->
+				<com.google.android.gms.ads.AdView
+					android:id="@+id/adView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					ads:adSize="BANNER"
+					ads:adUnitId="@string/banner_ad_unit_id"
+					android:layout_gravity="bottom">
+				</com.google.android.gms.ads.AdView>
+				<!-- End of admob banner -->
+			</FrameLayout>
+
+			<LinearLayout
+				android:id="@+id/body"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:layout_below="@id/anchor"
+				android:background="@color/material_background_color"
+				android:padding="@dimen/standard_margin">
+
+				<TextView
+					android:id="@+id/txtCategoryName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="@color/text_and_icon_color"
+					android:textSize="@dimen/subhead"
+					android:background="@color/accent_color"
+					android:textAllCaps="true"
+					android:paddingLeft="@dimen/caption_padding"
+					android:paddingRight="@dimen/caption_padding"
+					android:layout_marginTop="@dimen/standard_margin"/>
+				<TextView
+					android:id="@+id/txtTitle"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textStyle="bold"
+					android:textColor="@color/primary_text"
+					android:textSize="@dimen/display_1"/>
+
+				<TextView
+					android:id="@+id/txtAuthorAndDate"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:textSize="@dimen/subhead"
+					android:textColor="@color/secondary_text"
+					android:layout_marginBottom="@dimen/standard_margin"/>
+
+				<WebView
+					android:id="@+id/webContent"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@color/primary_text"
+					android:textSize="@dimen/body"
+					android:layout_marginTop="@dimen/standard_margin"/>
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+	<include layout="@layout/gradient_header_toolbar" />
+
+	<com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+		android:id="@+id/prgLoading"
+		android:layout_width="@dimen/circleprogressbar_width"
+		android:layout_height="@dimen/circleprogressbar_height"
+		android:layout_gravity="center"
+		app:mlpb_enable_circle_background="true"/>
+
+	<!-- Retry layout -->
+	<LinearLayout
+		android:id="@+id/lytRetry"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_gravity="center"
+		android:gravity="center"
+		android:visibility="gone">
+
+		<TextView
+			android:id="@+id/lblAlert"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/no_internet_connection"
+			android:textColor="@color/primary_text"
+			android:textSize="@dimen/subhead"
+			/>
+
+		<android.support.v7.widget.AppCompatButton
+			android:id="@+id/btnRetry"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/retry"
+			android:theme="@style/RaisedButtonStyle"/>
+	</LinearLayout>
+	<!-- End of retry layout -->
+
+	<include layout="@layout/toolbar" />
+
+	<net.i2p.android.ext.floatingactionbutton.FloatingActionButton
+		android:id="@+id/fabBrowser"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|right"
+		android:layout_marginRight="@dimen/standard_margin"
+		android:layout_marginBottom="@dimen/standard_margin"
+		app:fab_colorNormal="@color/accent_color"
+		app:fab_colorPressed="@color/light_primary_color"/>
+
+
+	<!--this is the view that shows the detail image in fullscreen-->
+	<com.formatrix.techpoint.utils.TouchImageView
+		android:id="@+id/fullImage"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="fitCenter"
+		android:background="@color/md_black_1000"
+		android:contentDescription="@string/date_util_prefix_over" />
+
+</FrameLayout>

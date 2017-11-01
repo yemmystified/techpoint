@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/material_background_color">
+
+ 	<LinearLayout
+		android:id="@+id/lytContent"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingLeft="@dimen/standard_margin"
+		android:paddingRight="@dimen/standard_margin"
+		android:paddingTop="@dimen/standard_margin"
+		android:paddingBottom="@dimen/standard_margin">
+		
+		<TextView
+			android:id="@+id/txtTitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/primary_text"
+			android:textSize="@dimen/title"
+			android:ellipsize="end"
+			android:maxLines="2"/>
+		<TextView
+			android:id="@+id/txtDate"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:textSize="@dimen/subhead"
+			android:textColor="@color/secondary_text"/>
+		<TextView
+			android:id="@+id/txtContent"
+			android:textColor="@color/primary_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="@dimen/body"
+			android:layout_marginTop="@dimen/standard_margin"/>
+	</LinearLayout>
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/divider_height"
+		android:background="@color/divider_color"/>
+	
+</RelativeLayout>
