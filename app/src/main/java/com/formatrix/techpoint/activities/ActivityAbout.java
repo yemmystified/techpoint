@@ -130,11 +130,6 @@ public class ActivityAbout extends PreferenceActivity
             Intent messageIntent = new Intent(getApplicationContext(), MsgActivity.class);
             startActivity(messageIntent);
 
-//            startEmailActivity("feedback@formatrix.ng", "Muyiwa Afolabi App Feedback", " 'Place your feedback below this text':\n\n\n\n\n\n\n" + "==========INFOMATRIX=========== "
-//						+ "\n" + "Muyiwa Afolabi Android version: " + versionCode + "\n" + "DEVICE MODEL: " + model + "\n" + "ANDROID OS: "
-//						+ os + "\n" + "API level: " + api + "\n" + "TimeZone: " + gmt + "\n" + "TZ: " + gmt1 + "\n" + "Location: " + tz.getID() + "\n" + "===============================");
-//				Toast.makeText(this, "Please do not edit pre-written data", Toast.LENGTH_LONG).show();
-//
 
         }
         else if(preference.getKey().equals(getString(R.string.pref_version))) {
@@ -146,7 +141,6 @@ public class ActivityAbout extends PreferenceActivity
         else if(preference.getKey().equals(getString(R.string.pref_developer))) {
 
 
-//            Toast.makeText(ActivityAbout.this, "Code is Art, Art is Life!", Toast.LENGTH_LONG).show();
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
 //                        Uri.parse("market://details?id=formatrix digital")));

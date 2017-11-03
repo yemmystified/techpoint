@@ -79,8 +79,6 @@ public class AdapterArticles extends UltimateViewAdapter<RecyclerView.ViewHolder
 
             // Set data to the view
             ((ViewHolder) holder).txtTitle.setText(item.get(Utils.KEY_TITLE));
-            //        i commented this out becasue i dont want publishers name
-//            ((ViewHolder) holder).txtAuthorAndDate.setText(authorAndDate);
             // Check sCategoryId value
             if((mCategoryId != null) && (mKeyword == null)) {
                 // If sCategoryId is not empty then hide category view as we do not need it
@@ -150,7 +148,6 @@ public class AdapterArticles extends UltimateViewAdapter<RecyclerView.ViewHolder
     public static class ViewHolder extends UltimateRecyclerviewViewHolder {
         // Create view objects
         final TextView txtTitle, txtCategoryName, txtAuthorAndDate;
-//        final RoundedImageView imgThumbnail;
         final ImageView imgThumbnail;
 
         public ViewHolder(View v) {
@@ -159,7 +156,6 @@ public class AdapterArticles extends UltimateViewAdapter<RecyclerView.ViewHolder
             txtTitle        = (TextView) v.findViewById(R.id.txtTitle);
             txtAuthorAndDate   = (TextView) v.findViewById(R.id.txtAuthorAndDate);
             txtCategoryName = (TextView) v.findViewById(R.id.txtCategoryName);
-//            imgThumbnail    = (RoundedImageView) v.findViewById(R.id.imgThumbnail);
             imgThumbnail    = (ImageView) v.findViewById(R.id.imgThumbnail);
         }
     }

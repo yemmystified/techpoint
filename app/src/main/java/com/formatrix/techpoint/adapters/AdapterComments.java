@@ -53,8 +53,6 @@ public class AdapterComments extends UltimateViewAdapter<RecyclerView.ViewHolder
             String date = mContext.getString(R.string.published_at) + " " + item.get(Utils.KEY_DATE);
             // Set data to the view
             ((ViewHolder) holder).txtTitle.setText(item.get(Utils.KEY_NAME));
-            //        i commented this out becasue i dont want publishers name
-//            ((ViewHolder) holder).txtDate.setText(date);
             ((ViewHolder) holder).txtContent.setText(Html.fromHtml(item.get(Utils.KEY_CONTENT)));
 
 

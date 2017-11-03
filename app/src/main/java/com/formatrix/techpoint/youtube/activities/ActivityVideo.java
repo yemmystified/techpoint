@@ -106,10 +106,7 @@ public final class ActivityVideo extends FragmentActivity implements
     // Connect view objects with view ids in xml
     frmLayoutList  = (FrameLayout) findViewById(R.id.fragment_container);
     mToolbar       = (Toolbar) findViewById(R.id.toolbar);
-//      Enable the line below if you want to disable the toolbar
-//      and also comment out all the lines with drawer list in this activity
-      mToolbar.setVisibility(View.GONE);
-//      mToolbar.setVisibility(View.VISIBLE);
+     mToolbar.setVisibility(View.VISIBLE);
 //      the line below is for the menu to be attached to the toolbar
       mToolbar.inflateMenu(R.menu.activity_video);
 //      ***********************************************************************************
@@ -133,9 +130,6 @@ public final class ActivityVideo extends FragmentActivity implements
               Toast.makeText(ActivityVideo.this, "Click on the subscribe link", Toast.LENGTH_LONG).show();
               overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
          }
-//         else if (item.getItemId() == R.id.about){
-//             Toast.makeText(ActivityVideo.this, "this is a toast", Toast.LENGTH_SHORT).show();
-//         }
               return false;
           }
       });
@@ -174,11 +168,6 @@ public final class ActivityVideo extends FragmentActivity implements
       // Create drawer menu
       mDrawer = new DrawerBuilder(this)
           .withActivity(ActivityVideo.this)
-//              ************************************************************************************************************
-//              Rememeber to uncheck the ".withToolbar(mToolbar)" if you dont want to use up button on the toolbar anymore
-//          .withToolbar(mToolbar)
-//              ************************************************************************************************************
-//              .withAccountHeader(headerResult)
           .withRootView(R.id.drawer_container)
           .withActionBarDrawerToggleAnimated(true)
               .withActionBarDrawerToggle(false)
@@ -386,11 +375,11 @@ public final class ActivityVideo extends FragmentActivity implements
         frmLayoutList.setVisibility(View.GONE);
         setLayoutSize(mFragmentVideo.getView(), MATCH_PARENT, MATCH_PARENT);
     } else if (isPortrait) {
-//        mToolbar.setVisibility(View.VISIBLE);
-        mToolbar.setVisibility(View.GONE);
+       mToolbar.setVisibility(View.VISIBLE);
+        // mToolbar.setVisibility(View.GONE);
         frmLayoutList.setVisibility(View.VISIBLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+       getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setLayoutSize(mFragmentVideo.getView(), WRAP_CONTENT, WRAP_CONTENT);
     } else {
         mToolbar.setVisibility(View.VISIBLE);
@@ -428,7 +417,7 @@ public final class ActivityVideo extends FragmentActivity implements
             if (isFullscreen){
                 mFragmentVideo.backnormal();
                 mToolbar.setVisibility(View.VISIBLE);
-//                mToolbar.setVisibility(View.GONE);
+               // mToolbar.setVisibility(View.GONE);
                 frmLayoutList.setVisibility(View.VISIBLE);
                 setLayoutSize(mFragmentVideo.getView(), WRAP_CONTENT, WRAP_CONTENT);
             } else{

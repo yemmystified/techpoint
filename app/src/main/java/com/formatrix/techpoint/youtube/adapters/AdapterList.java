@@ -64,12 +64,10 @@ public class AdapterList extends UltimateViewAdapter<RecyclerView.ViewHolder> {
             // Set data to the view
             ((ViewHolder) holder).mTxtTitle.setText(item.get(UtilsVideo.KEY_TITLE));
             ((ViewHolder) holder).mTxtDuration.setText(item.get(UtilsVideo.KEY_DURATION));
-//            ((ViewHolder) holder).mTxtPublishedAt.setText(item.get(UtilsVideo.KEY_PUBLISHEDAT));
 
             // Set image to imageview
             IMAGE_LOADER.get(item.get((UtilsVideo.KEY_URL_THUMBNAILS)),
                     ImageLoader.getImageListener(((ViewHolder) holder).mImgThumbnail,
-//                            R.mipmap.empty_photo, R.mipmap.empty_photo));
                             R.mipmap.empty, R.mipmap.empty));
         }
 
@@ -122,7 +120,6 @@ public class AdapterList extends UltimateViewAdapter<RecyclerView.ViewHolder> {
             mTxtTitle     = (TextView) v.findViewById(R.id.txtTitle);
             mTxtDuration  = (TextView) v.findViewById(R.id.txtDuration);
             mImgThumbnail = (ImageView) v.findViewById(R.id.imgThumbnail);
-//            mTxtPublishedAt = (TextView) v.findViewById(R.id.txtPublishedAt);
         }
     }
 

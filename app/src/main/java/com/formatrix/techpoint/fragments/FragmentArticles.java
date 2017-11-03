@@ -120,8 +120,6 @@ public class FragmentArticles extends Fragment implements
         mLblNoResult                = (TextView) view.findViewById(R.id.lblNoResult);
 
         TextView mlblAlert = (TextView) view.findViewById(R.id.lblAlert);
-//        Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),"BebasNeue.otf");
-//        mlblAlert.setTypeface(custom_font);
         mLytRetry                   = (LinearLayout) view.findViewById(R.id.lytRetry);
         mPrgLoading                 = (CircleProgressBar) view.findViewById(R.id.prgLoading);
         AppCompatButton btnRetry    = (AppCompatButton) view.findViewById(R.id.btnRetry);
@@ -311,12 +309,6 @@ public class FragmentArticles extends Fragment implements
                                                     getJSONObject(Utils.OBJECT_IMAGES);
                                             attachmentsImagesFullObject = attachmentsImagesObject.
                                                     getJSONObject(Utils.OBJECT_IMAGES_FULL);
-
-//                                        commented the below lines out to make the app work
-//                                            attachmentsImagesThumbnailObject = attachmentsImagesObject.
-//                                                    getJSONObject(Utils.OBJECT_IMAGES_THUMBNAIL);
-//                                            mImageThumbnail = attachmentsImagesThumbnailObject.
-//                                                    getString(Utils.KEY_URL);
                                             mImageFull = attachmentsImagesFullObject.
                                                     getString(Utils.KEY_URL);
                                         } else {

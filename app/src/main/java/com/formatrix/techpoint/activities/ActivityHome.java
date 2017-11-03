@@ -64,18 +64,16 @@ public class ActivityHome extends AppCompatActivity {
     // Create tag for log
     private static final String TAG = ActivityHome.class.getSimpleName();
 
-//    Error listener for permission
-    private PermissionRequestErrorListener errorListener;
-
     // Create view objects
     private Toolbar mToolbar;
     private Fragment mFragment;
     private Drawer mDrawer;
     private String phone1 = "+2348186016629";
-//    private String phone2 = "+2348107815864";
     SharedPreferences appPreferences;
     boolean isAppInstalled = false;
-    static String APP_ID, ZONE_ID;
+
+    //    Error listener for permission
+    private PermissionRequestErrorListener errorListener;
 
 //    the line below is for the header above the navigation drawer
     private AccountHeader headerResult = null;
@@ -89,59 +87,6 @@ public class ActivityHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-//        APP_ID = getString(R.string.app_id);
-//        ZONE_ID = getString(R.string.zone_id);
-//
-//        /** Construct optional app options object to be sent with configure */
-//        AdColonyAppOptions app_options = new AdColonyAppOptions()
-//                .setUserID("unique_user_id");
-//
-//
-//        /**
-//         * Configure AdColony in your launching Activity's onCreate() method so that cached ads can
-//         * be available as soon as possible.
-//         */
-//        AdColony.configure(this, app_options, APP_ID, ZONE_ID);
-//
-//        listener = new AdColonyInterstitialListener() {
-//            /** Ad passed back in request filled callback, ad can now be shown */
-//            @Override
-//            public void onRequestFilled(final AdColonyInterstitial ad) {
-////                ActivityHome.this.ad = ad;
-////                Toast.makeText(ActivityHome.this, "request filled", Toast.LENGTH_SHORT).show();
-//                Log.d(TAG, "onRequestFilled");
-//            }
-//
-//            /** Ad request was not filled */
-//            @Override
-//            public void onRequestNotFilled(AdColonyZone zone) {
-////                Toast.makeText(ActivityHome.this, "request not filled", Toast.LENGTH_SHORT).show();
-//                Log.d(TAG, "onRequestNotFilled");
-//            }
-//
-//            /** Ad opened, reset UI to reflect state change */
-//            @Override
-//            public void onOpened(AdColonyInterstitial ad) {
-////                Toast.makeText(ActivityHome.this, "request opened ", Toast.LENGTH_SHORT).show();
-//                Log.d(TAG, "onOpened");
-//            }
-//
-//            /** Request a new ad if ad is expiring */
-//            @Override
-//            public void onExpiring(AdColonyInterstitial ad) {
-//                AdColony.requestInterstitial(ZONE_ID, this, ad_options);
-//                Log.d(TAG, "onExpiring");
-////                Toast.makeText(ActivityHome.this, "request expiring", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onClosed(AdColonyInterstitial ad) {
-//                super.onClosed(ad);
-//                Intent pdfIntent = new Intent(getApplicationContext(), PdfActivity.class);
-//                startActivity(pdfIntent);
-//
-//            }
-//        };
 
 
         AppRater.app_launched(this);
@@ -149,14 +94,7 @@ public class ActivityHome extends AppCompatActivity {
         // Connect view objects and view ids from xml
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        // Set Toolbar title with "Recent News"
         mToolbar.setTitle(getString(R.string.recent_post));
-//        mToolbar.getOverflowIcon(R.mipmap.ic_launcher);
-//        mToolbar.setNavigationIcon(R.mipmap.ic_launcher);
-//        This commented one below is for the subtitle below the title
-//        mToolbar.setSubtitle("Muyiwa Afolabi");
-//        mToolbar.setNavigationIcon(R.mipmap.ic_launcher);
-//        Typeface custom_font = Typeface.createFromAsset(getResources().getAssets(),"BebasNeue.otf");
 
         // Set toolbar as actionbar
         setSupportActionBar(mToolbar);
@@ -185,14 +123,14 @@ public class ActivityHome extends AppCompatActivity {
                                 .withName(getString(R.string.recent_post))
                                 .withIcon(GoogleMaterial.Icon.gmd_chrome_reader_mode)
                                 .withIdentifier(1)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.categories))
                                 .withIcon(GoogleMaterial.Icon.gmd_apps)
                                 .withIdentifier(2)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
 //                        new DividerDrawerItem(), this is to create a line between the drawer items
 
 //this line below is done to make the a unclickable header in the drawer list with the help of description and set eneble to false (unclickable)
@@ -208,59 +146,40 @@ public class ActivityHome extends AppCompatActivity {
 //                                .withTypeface(custom_font)
                                 .withSelectable(true),
 
-//                        new SecondaryDrawerItem()
-//                        .withName("mask")
-//                        .withIdentifier(12)
-////                                .withIcon(getDrawable(R.mipmap.ic_launcher))
-//                                .withIcon(R.mipmap.ic_launcher)
-//                        .withSelectable(false),
-//                        new PrimaryDrawerItem()
-//                                .withName(getString(R.string.magazine))
-//                                .withIcon(GoogleMaterial.Icon.gmd_collections_bookmark)
-//                                .withIdentifier(4)
-////                                .withTypeface(custom_font)
-//                                .withSelectable(true),
-
                         new DividerDrawerItem(),
 
-//                        new SecondaryDrawerItem()
-//                                .withName("Connect")
-////                                .withDescription("socials")
-//                                .withEnabled(false)
-//                                .withSelectable(false),
 
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.facebook))
                                 .withIcon(CommunityMaterial.Icon.cmd_facebook)
                                 .withIdentifier(4)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.twitter))
                                 .withIcon(CommunityMaterial.Icon.cmd_twitter)
                                 .withIdentifier(5)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.instagram))
                                 .withIcon(CommunityMaterial.Icon.cmd_instagram)
                                 .withIdentifier(6)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.contact_us))
                                 .withIcon(GoogleMaterial.Icon.gmd_phone)
                                 .withIdentifier(7)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true),
+
                         new PrimaryDrawerItem()
                                 .withName(getString(R.string.about))
-//                                .withTextColor(Color.WHITE)
                                 .withIcon(GoogleMaterial.Icon.gmd_info)
                                 .withIdentifier(8)
-//                                .withTypeface(custom_font)
                                 .withSelectable(true)
                 )
+
 //                uncomment this below if you want to include the sticky bar below the drawer
 //*************************************************************************************************************************
 //                .addStickyDrawerItems(
@@ -270,6 +189,7 @@ public class ActivityHome extends AppCompatActivity {
 //                                .withSelectable(false)
 //                )
 // *************************************************************************************************************************
+
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(final View view, int position, IDrawerItem drawerItem) {
@@ -336,72 +256,6 @@ public class ActivityHome extends AppCompatActivity {
 
                             }
 
-//                            line commented below is for magazine pdfactivity whenever i want to activate it
-//                            else if (drawerItem.getIdentifier() == 4 &&
-//                                    Utils.loadIntPreferences(getApplicationContext(),
-//                                            Utils.ARG_DRAWER_PREFERENCE,
-//                                            Utils.ARG_PREFERENCES_DRAWER) !=
-//                                            drawerItem.getIdentifier()) {
-//                                if (ad == null || ad.isExpired())
-//                                if (!ad.show()|| ad.isExpired())
-//                                {
-
-                                    /**
-                                     * Optionally update location info in the ad options for each request:
-                                     * LocationManager location_manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
-                                     * Location location = location_manager.getLastKnownLocation( LocationManager.GPS_PROVIDER );
-                                     * ad_options.setUserMetadata( ad_options.getUserMetadata().setUserLocation( location ) );
-                                     */
-//                                    try {
-//                                        new Thread(new Runnable() {
-//                                            @Override
-//                                            public void run() {
-//                                                Intent pdfIntent = new Intent(getApplicationContext(), PdfActivity.class);
-//                                                startActivity(pdfIntent);
-//                                            }
-//                                        }).start();
-//
-//                                    } catch (Exception e) {
-//                                        Log.e(TAG, "open sesame");
-//                                    }
-//                                } else {
-//
-//                                    try {
-//                                        ad.show();
-//                                    } catch (Exception e) {
-//                                        Log.e(TAG, "Ad exception");
-//                                    }
-//                                }
-
-
-//                                **************************************************************
-//                                  Method for reading pdf from external file
-//                                **************************************************************************
-//                                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/dit.pdf");
-//                                    Intent intent = new Intent(Intent.ACTION_VIEW);
-//                                    intent.setDataAndType(Uri.fromFile(file), "application/pdf");
-//                                    intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-//                                Intent intent1 = Intent.createChooser(intent, "Open With");
-//                                try{
-//                                    startActivity(intent1);
-//                                }catch (Exception e ){
-//
-//                                }
-
-                                // *************************************
-
-//                                make a share intent to email
-//                                startEmailActivity("info@frontiersconsulting.net", "Event Bookings", "\n");
-//                                overridePendingTransition(R.anim.open_next, R.anim.close_main);
-//                      down to up effect
-//                                overridePendingTransition(R.anim.up_from_bottom, R.anim.down_from_top);
-//                      up to down effect
-//                                overridePendingTransition(R.anim.in_animation, R.anim.out_animation);
-//                            }
-
-
-
-
                             else if (drawerItem.getIdentifier() == 4 &&
                                     Utils.loadIntPreferences(getApplicationContext(),
                                             Utils.ARG_DRAWER_PREFERENCE,
@@ -443,9 +297,6 @@ public class ActivityHome extends AppCompatActivity {
                                             Utils.ARG_PREFERENCES_DRAWER) !=
                                             drawerItem.getIdentifier()) {
 
-//                                Intent bookIntent = new Intent(getApplicationContext(), FormActivity.class);
-//                                startActivity(bookIntent);
-
 
                                 // Open ActivityBrowser to display Instagram page
                                 Intent settingsIntent = new Intent(getApplicationContext(),
@@ -462,7 +313,7 @@ public class ActivityHome extends AppCompatActivity {
                                             Utils.ARG_PREFERENCES_DRAWER) !=
                                             drawerItem.getIdentifier()) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(ActivityHome.this, 3);
-//				android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(ActivityHome.this, 3);
+//              android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(ActivityHome.this, 3);
                                 builder.setIcon(R.mipmap.ic_launcher);
                                 builder.setTitle("Select to dial")
                                         .setItems(R.array.numbers, new DialogInterface.OnClickListener() {
@@ -471,6 +322,7 @@ public class ActivityHome extends AppCompatActivity {
                                                         if (which == 0) {
 
 ////                                                            this method is done to show the number in the dialer
+
                                                             Dexter.withActivity(ActivityHome.this)
                                                                     .withPermission(Manifest.permission.CALL_PHONE)
 //                                                                    .withListener(callPermissionListener)
@@ -527,59 +379,10 @@ public class ActivityHome extends AppCompatActivity {
 
 //
                                                 }
-//                                                if (which == 1) {
-//                                                    Dexter.withActivity(ActivityHome.this)
-//                                                            .withPermission(Manifest.permission.CALL_PHONE)
-//                                                            .withListener(new PermissionListener() {
-//                                                                @Override
-//                                                                public void onPermissionGranted(PermissionGrantedResponse response) {
-////                                                                            and this method is to dial directly
-//                                                                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-//                                                                    callIntent.setData(Uri.parse("tel:" + Uri.encode(phone2.trim())));
-//
-//                                                                    if (ActivityCompat.checkSelfPermission(ActivityHome.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-//                                                                        // TODO: Consider calling
-//                                                                        //    ActivityCompat#requestPermissions
-//                                                                        // here to request the missing permissions, and then overriding
-//                                                                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//                                                                        //                                          int[] grantResults)
-//                                                                        // to handle the case where the user grants the permission. See the documentation
-//                                                                        // for ActivityCompat#requestPermissions for more details.
-//                                                                        return;
-//                                                                    }
-//                                                                    startActivity(callIntent);
-//                                                                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-//                                                                    Toast.makeText(ActivityHome.this, "Dialling....", Toast.LENGTH_SHORT).show();
-//                                                                }
-//                                                                @Override public void onPermissionDenied(PermissionDeniedResponse response) {
-//                                                                    int duration =10000;// amount of time the snackbar should stay visible
-//                                                                    Snackbar.make(view, "Permission needs to be activated to use this feature", duration)
-////                                                                                .setAction("Action", null).show();
-////                                                                                .setActionTextColor(getResources().getColor(R.color.blue)) // this is to change the color ogf the action on snackbar
-//                                                                            .setAction("Activate", new View.OnClickListener() {
-//                                                                                @Override
-//                                                                                public void onClick(View v) {
-//                                                                                    Intent intent = new Intent();
-//                                                                                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-//                                                                                    Uri uri = Uri.fromParts("package", getPackageName(), null);
-//                                                                                    intent.setData(uri);
-//                                                                                    startActivity(intent);
-//                                                                                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-//                                                                                }
-//                                                                            }).show();
-//                                                                }
-//                                                                @Override public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-//                                                                    token.continuePermissionRequest();
-//                                                                }
-//                                                            })
-//                                                            .withErrorListener(errorListener)
-//                                                            .check();
-//
-//                                                }
                                             }
                                         }
                                         );
-				                            builder.show();
+                                            builder.show();
                             } else if (drawerItem.getIdentifier() == 8 &&
                                     Utils.loadIntPreferences(getApplicationContext(),
                                             Utils.ARG_DRAWER_PREFERENCE,
@@ -593,7 +396,7 @@ public class ActivityHome extends AppCompatActivity {
                             }
 
 
-//                            uncheck this below to give action t the sticky bar below the mrawer
+//                            uncheck this below to give action t the sticky bar below the mdrawer
 //*************************************************************************************************************************
 //                            else if (drawerItem.getIdentifier() == 10 &&
 //                                    Utils.loadIntPreferences(getApplicationContext(),
@@ -656,7 +459,6 @@ public class ActivityHome extends AppCompatActivity {
         SharedPreferences.Editor editor = appPreferences.edit();
         editor.putBoolean("isAppInstalled", true);
         editor.apply();
-//        Toast.makeText(ActivityHome.this, "installed on home screen", Toast.LENGTH_SHORT).show();
     }
 
     //to add shortcut to home
@@ -715,7 +517,6 @@ public class ActivityHome extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int id) {
                                     finish();
                                     overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-//						Toast.makeText(getApplication(), "more updates coming!", Toast.LENGTH_SHORT).show();
 
                                 }
                             })
@@ -782,22 +583,5 @@ public class ActivityHome extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        /**
-         * It's somewhat arbitrary when your ad request should be made. Here we are simply making
-         * a request if there is no valid ad available onResume, but really this can be done at any
-         * reasonable time before you plan on showing an ad.
-         */
-
-//        uncomment this for adcolony ad
-//        if (ad == null || ad.isExpired())
-//        {
-//            /**
-//             * Optionally update location info in the ad options for each request:
-//             * LocationManager location_manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
-//             * Location location = location_manager.getLastKnownLocation( LocationManager.GPS_PROVIDER );
-//             * ad_options.setUserMetadata( ad_options.getUserMetadata().setUserLocation( location ) );
-//             */
-//            AdColony.requestInterstitial( ZONE_ID, listener, ad_options );
-//        }
     }
 }

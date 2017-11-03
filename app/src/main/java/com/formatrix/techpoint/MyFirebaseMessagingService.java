@@ -13,8 +13,6 @@ import com.formatrix.techpoint.activities.ActivityHome;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-//import com.formatrix.magdemo.activities.PdfActivity;
-//import com.formatrix.magdemo.youtube.activities.ActivityVideo;
 
 /**
  * Created by Lenovo T510 on 4/27/2017.

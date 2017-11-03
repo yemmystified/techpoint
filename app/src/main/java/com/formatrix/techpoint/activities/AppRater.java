@@ -21,7 +21,7 @@ public class AppRater extends ActivityHome {
     final String appName = getPackageName();//your application package name i.e play store application url
 
 
-    private final static String APP_TITLE = APP_ID;
+    private final static String APP_TITLE = "APP_ID";
     private final static String APP_PACKAGE_NAME = "com.formatrix.techpoint";
 
     private final static int DAYS_UNTIL_PROMPT = 2;

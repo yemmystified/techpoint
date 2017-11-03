@@ -105,9 +105,6 @@ public class ActivityDetail extends ActivityBase implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-//        Typeface custom_font = Typeface.createFromAsset(getAssets(),"Bebas Neue.ttf");
-
-
         // Get data that pass from previous Activity
         Intent i                    = getIntent();
         mArticleId                  = i.getStringExtra(Utils.EXTRA_ARTICLE_ID);
@@ -201,13 +198,6 @@ public class ActivityDetail extends ActivityBase implements
                         startActivity(Intent.createChooser(
                                 iShare, getResources().getString(R.string.share_to)));
                         break;
-//                    case R.id.menuComment:
-//                        // Display Comment in this article
-//                        Intent iComment = new Intent(getApplicationContext(), ActivityComments.class);
-//                        iComment.putExtra(Utils.EXTRA_ARTICLE_ID, mArticleId);
-//                        startActivity(iComment);
-//                        overridePendingTransition(R.anim.open_next, R.anim.close_main);
-//                        break;
                 }
                 return true;
             }
@@ -446,9 +436,7 @@ public class ActivityDetail extends ActivityBase implements
                                     mFullImage.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-//                                            uncheck below to return to diappear on click
-//                                            mFullImage.setVisibility(View.GONE);
-//                                         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
                                         }
                                     });
                                 } else {
@@ -494,12 +482,6 @@ public class ActivityDetail extends ActivityBase implements
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_activity_detail, menu);
 
-        // Add comment item
-//        mToolbar.getMenu().findItem(R.id.menuComment)
-//                .setIcon(new IconicsDrawable(getApplicationContext())
-//                        .icon(GoogleMaterial.Icon.gmd_forum)
-//                        .color(Color.WHITE)
-//                        .actionBar());
         // Add share item
         mToolbar.getMenu().findItem(R.id.menuShare)
                 .setIcon(new IconicsDrawable(getApplicationContext())
@@ -525,11 +507,6 @@ public class ActivityDetail extends ActivityBase implements
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fabBrowser:
-                // Open article in browser
-//                Intent i = new Intent(Intent.ACTION_VIEW);
-//                i.setData(Uri.parse(mUrl));
-//                startActivity(i);
-//                overridePendingTransition(R.anim.open_up, R.anim.close_down);
                 Intent iComment = new Intent(getApplicationContext(), ActivityComments.class);
                 iComment.putExtra(Utils.EXTRA_ARTICLE_ID, mArticleId);
                 startActivity(iComment);
